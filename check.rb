@@ -7,17 +7,3 @@ module Check
     distance > 0.7 ? true : false
   end
 end
-
-class Test
-  include Check
-  attr_accessor :guess, :answer
-
-  def initialize
-    @guess = guess
-    @answer = answer
-  end
-
-end
-
-test = Test.new
-p test.check('chris', 'chrix')
