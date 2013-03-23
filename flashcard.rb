@@ -1,5 +1,8 @@
 # Tom and Carolyn Flashcards
 class Card
+
+  attr_reader :question, :answer
+
   def initialize(question, answer)
     @question = question
     @answer = answer
@@ -8,13 +11,16 @@ end
 
 
 class Deck
+
+  attr_reader :array_of_cards
+
   def initialize
-    @cards = FileUtilities::file_reader #our text file will go here
-    @current = nil
+    @cards = FileUtilities::file_reader.shuffle #our text file will go here
+    
   end
 
   def draw_card
-    @current = @cards.pop
+    @cards.pop
   end
 
   def shuffle
